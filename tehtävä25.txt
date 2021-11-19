@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <mat
+
+double laskeHypotenuusa(double, double);
+
+int main() {
+    
+    double sivu1 = 0.0;
+    double sivu2 = 0.0;
+    double hypotenuusa = 0.0;
+    
+    printf("\nAnna ensimmäinen sivu: ");
+    scanf("%lf", &sivu1);
+    
+    printf("\nAnna toinen sivu: ");
+    scanf("%lf", &sivu2);
+    
+    return 0;
+}v
