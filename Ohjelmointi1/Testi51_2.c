@@ -1,32 +1,37 @@
-#include <string.h>
 #include <stdio.h>
-// abcdefghijklmnopqrstuvwxyz
-int main()
+#include <ctype.h>
+#include <string.h>
+int main(void)
 {
-    char s[1000], c;
-    char aakkonen[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    int i, count = 0;
-    int merkki, kirjain;
-    char jono
+int i, j, k = 0, c = 0, len, count[26];
+char jono[30];
+printf("Enter a string : ");
+gets(jono);
+len = strlen(jono);
 
-        printf("Enter  the string : ");
-    gets(s);
-    printf("Enter character to be searched: ");
-    c = getchar();
+for(i = 0; i < 26; i++)
+count[i] = 0;
 
-    for (i = 0; s[i]; i++)
-    {
-        if (s[i] == aakkonen[i] || s[i] == 'A')
-        {
-            count++;
-        }
-    }
-    for (size_t i = 0; i < count; i++)
-    {
-        jono[merkki][kirjain] <= 'a' || jono[merkki][kirjain] >= 'z';
-    }
+for(i = 65; i < 90; i++)
+{
+for(j = 0; j < len; j++)
+{
+if(jono[j] == toupper(i) || jono[j] == tolower(i))
+count[k] = ++c;
+}
 
-    printf("character '%c' occurs %d times \n ", c, count);
+k++;
+c=0;
+}
 
-    return 0;
+printf("\n");
+for(i = 65; i < 90; i++)
+
+printf("%c ",i);
+printf("\n");
+
+for(i = 0; i < 25; i++)
+
+printf("%d ",count[i]);
+return 0;
 }
