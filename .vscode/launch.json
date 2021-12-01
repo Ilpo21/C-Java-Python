@@ -1,7 +1,6 @@
 {
   "version": "0.2.0",
   "configurations": [
-    
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -12,7 +11,7 @@
       "stopAtEntry": false,
       "cwd": "h:/Lipasto/code/Ohjelmointi1",
       "environment": [],
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "program": "h:/Lipasto/code/Ohjelmointi1/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "C:/MinGw/bin/gdb.exe",
