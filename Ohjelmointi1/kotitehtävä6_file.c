@@ -36,10 +36,8 @@ int main(void)
             printf("\nAnna pin-koodi:");
             fgets(pinnumero, 256, stdin);
             if (pinnumero[strlen(pinnumero - 1)] == '\n')
-
-            {
                 pinnumero[strlen(pinnumero) - 1] = '\0';
-            }
+
             else
             {
                 bufferi();
@@ -48,6 +46,9 @@ int main(void)
 
             do
             {
+                if (tarkistus[strlen(tarkistus) - 1] == '\n')
+                    tarkistus[strlen(tarkistus) - 1] = '\0';
+
                 if (tarkistus[strlen(tarkistus) - 1] == '\r')
                     tarkistus[strlen(tarkistus) - 1] = '\0';
 
@@ -59,7 +60,7 @@ int main(void)
                 else
                     printf("Väärä pinkoodi, kokeile uudelleen");
 
-            } while (!tulos);
+            } while (tulos);
         }
         else
         {

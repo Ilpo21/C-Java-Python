@@ -32,7 +32,7 @@ int main(void)
         {
             printf("Give your pin-code > ");
 
-            fgets(pinCode, 256, stdin);
+            scanf(pinCode);
 
             if (pinCode[strlen(pinCode) - 1] == '\n')
                 pinCode[strlen(pinCode) - 1] = '\0';
