@@ -10,14 +10,6 @@ void kirjainString(char array[], int pituus);
 void bufferi(void);
 int pankkilaskuri(int raha);
 
-void seteli(int seteli, int *viisi, int *kaksi) // funktio kotitehtävä 5. laskee halutut määrät 20 ja 50 seteleitä.
-{
-    int viis;
-    *viisi = seteli / 50 - (seteli > 50 && seteli % 50 % 20);
-    viis = *viisi;
-    *kaksi = (seteli - viis * 50) / 20;
-}
-
 int main(void)
 {
 
@@ -53,7 +45,7 @@ int main(void)
         if ((pFile = fopen(tilinumero, "r")) != NULL)
         {
             printf("\nAnna pin-koodi:");
-            fgets(pinnumero, 256, stdin);
+            scanf("%s", pinnumero);
             if (pinnumero[strlen(pinnumero - 1)] == '\n')
                 pinnumero[strlen(pinnumero) - 1] = '\0';
 
@@ -73,8 +65,8 @@ int main(void)
 
                 if ((tulos = strcmp(pinnumero, tarkistus)) == 0)
                 {
-                    fscanf(pFile, "%d", &saldo);
-                    printf("\nSaldosi on:%d", saldo);
+                    tulos = 0;
+                    break;
                 }
                 else
                     printf("Väärä pinkoodi, kokeile uudelleen");
@@ -124,55 +116,64 @@ int main(void)
             printf("\nKiitos automaatin kaytosta"); // Lopetus
             return 0;
         }
-
-        int pankkilaskuri(int raha) // laskuri nostoa varten
-        {
-
-            int tili = 1000;
-            tili = tili - raha;
-            return tili;
-        }
-
-        void bufferi(void)
-        {
-            while (fgetc(stdin) != '\n')
-                ;
-        }
-
-        int lueluku(void)
-        {
-            int numero, status;
-            char kirjain;
-
-            while ((status = scanf("%d%c", &numero, &kirjain)) == 0 || (2 == status && kirjain != '\n'))
-            {
-                bufferi();
-                printf("\nEt antanut numeroa, yritä uudelleen:");
-            }
-            return numero;
-        }
-        double luenumero(void)
-        {
-            double numero;
-            char kirjain;
-            int status;
-
-            while ((status = scanf("%lf%c", &numero, &kirjain)) == 0 || 2 == status && kirjain != '\n')
-            {
-                bufferi();
-                printf("\nEt antanut numeroa, yritä uudelleen:");
-            }
-            return numero;
-        }
-
-        void kirjainString(char array[], int pituus)
-        {
-            fgets(array, pituus, stdin);
-            if (array[strlen(array) - 1] == '\n')
-            {
-                array[strlen(array) - 1] = '\0';
-            }
-            else
-                bufferi();
-        }
     } while (tulos);
+}
+
+int seteli(int seteli, int *viisi, int *kaksi) // funktio kotitehtävä 5. laskee halutut määrät 20 ja 50 seteleitä.
+{
+    int viis;
+    *viisi = seteli / 50 - (seteli > 50 && seteli % 50 % 20);
+    viis = *viisi;
+    *kaksi = (seteli - viis * 50) / 20;
+}
+int pankkilaskuri(int raha) // laskuri nostoa varten
+{
+
+    int tili = 1000;
+    tili = tili - raha;
+    return tili;
+}
+
+void bufferi(void)
+{
+    while (fgetc(stdin) != '\n')
+        ;
+}
+
+int lueluku(void)
+{
+    int numero, status;
+    char kirjain;
+
+    while ((status = scanf("%d%c", &numero, &kirjain)) == 0 || (2 == status && kirjain != '\n'))
+    {
+        bufferi();
+        printf("\nEt antanut numeroa, yritä uudelleen:");
+    }
+    return numero;
+}
+double luenumero(void)
+{
+    double numero;
+    char kirjain;
+    int status;
+
+    while ((status = scanf("%lf%c", &numero, &kirjain)) == 0 || 2 == status && kirjain != '\n')
+    {
+        bufferi();
+        printf("\nEt antanut numeroa, yritä uudelleen:");
+    }
+    return numero;
+}
+
+void kirjainString(char array[], int pituus)
+{
+
+    fgets(array, pituus, stdin);
+    if (array[strlen(array) - 1] == '\n')
+    {
+        array[strlen(array) - 1] = '\0';
+    }
+    else
+        bufferi();
+}

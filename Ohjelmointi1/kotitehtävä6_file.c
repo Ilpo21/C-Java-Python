@@ -34,7 +34,7 @@ int main(void)
         if ((pFile = fopen(tilinumero, "r")) != NULL)
         {
             printf("\nAnna pin-koodi:");
-            fgets(pinnumero, 256, stdin);
+            scanf("%s", pinnumero);
             if (pinnumero[strlen(pinnumero - 1)] == '\n')
                 pinnumero[strlen(pinnumero) - 1] = '\0';
 
