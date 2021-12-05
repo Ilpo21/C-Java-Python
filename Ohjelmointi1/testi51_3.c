@@ -1,42 +1,77 @@
-#include <string.h>
 #include <stdio.h>
-#define PITUUS 100
+#include <ctype.h>
+#include <string.h>
+
 
 int main(void)
 {
-    char jono[3][PITUUS];
-    int merkki = 0;
-    int kirjain = 0;
-    int i = 0;
-    int a;
-    int z;
-    char b = a;
-    char x = z;
-    int numero;
-    a = b;
-    z = x;
+int i, j, k = 0, c = 0, len, lukumaara[26];
+int lukumaara1[26];
+int lukumaara2[26];
+int lukumaara3[200];
+char jono[30];
+char jono1[30];
+char jono2[30];
 
-    for (int i = 0; i < 3; i++)
-    {
-        printf("luku\n");
-        fgets(jono[i], PITUUS, stdin);
-    }
 
-    while (i <= 2)
-    {
-        for (int j = 0; jono[i][kirjain] != '\0'; kirjain++)
-        {
+printf("Enter a string : ");
+gets(jono);
+len = strlen(jono);
 
-            if (jono[i][kirjain] >= 97 || jono[i][kirjain] <= 122)
-            {
-                merkki++;
-            }
-        }
-        i++;
-        kirjain = 0;
-    }
+for(i = 0; i < 26; i++)
+lukumaara[i] = 0;
 
-    printf("%d", merkki);
+for(i = 65; i < 90; i++)
+{
+for(j = 0; j < len; j++)
+{
+if(jono[j] == toupper(i) || jono[j] == tolower(i))
+lukumaara[k] = ++c;
+}
 
-    return 0;
+k++;
+c=0;
+}
+
+printf("Enter a string : ");
+gets(jono1);
+len = strlen(jono1);
+k=0;
+for(i = 0; i < 26; i++)
+lukumaara1[i] = 0;
+
+for(i = 65; i < 90; i++)
+{
+for(j = 0; j < len; j++)
+{
+if(jono1[j] == toupper(i) || jono1[j] == tolower(i))
+lukumaara1[k] = ++c;
+}
+
+k++;
+c=0;
+}
+ for ( i = 0; i < 26; i++)
+ {
+     if(lukumaara[i]!=0)
+{
+     lukumaara3[i]+=lukumaara[i];}
+ }
+ 
+for ( i = 0; i < 26; i++)
+ {
+     if(lukumaara1[i]!=0)
+     lukumaara3[i] +=lukumaara1[i];
+ }
+
+printf("\n");
+for(i = 65; i < 90; i++)
+
+printf("%c ",i);
+printf("\n");
+
+for(i = 0; i < 300; i++)
+{
+printf("%d ",lukumaara3[i]);}
+return 0;
 }

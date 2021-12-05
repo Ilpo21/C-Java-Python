@@ -49,5 +49,7 @@ int main(void)
         printf("\na -merkilla alkava merkkijono %s", jono4);
     }
 
+
+
     return 0;
 }
