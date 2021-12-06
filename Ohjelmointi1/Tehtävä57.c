@@ -8,7 +8,7 @@ void luePois(void);
 int main(void)
 {
     char jono[PITUUS], jono1[PITUUS];
-    int y;
+    int y = 0;
     printf("\nAnna merkkijono 1:\n");
     fgets(jono, PITUUS, stdin);
 
@@ -16,6 +16,7 @@ int main(void)
     fgets(jono1, PITUUS, stdin);
 
     omaStrcmp(jono, jono1, y);
+
     return 0;
 }
 
@@ -27,23 +28,6 @@ void omaStrcmp(char *array1, char *array2, int x)
     {
         jono1[i] = array1[i];
         jono2[i] = array2[i];
-    }
-    if (jono1[strlen(jono1 - 1)] == '\n') // poistellaa merkkejä
-    {
-        jono1[strlen(jono1) - 1] = '\0';
-    }
-    else
-    {
-        luePois();
-    }
-
-    if (jono2[strlen(jono2 - 1)] == '\n')
-    {
-        jono2[strlen(jono2) - 1] = '\0';
-    }
-    else
-    {
-        luePois();
     }
 
     while (*array1 != '\0' || *array2 != '\0') // aletaan vähäse tarkastelee sotkua
@@ -59,30 +43,37 @@ void omaStrcmp(char *array1, char *array2, int x)
         {
             merkki = 1;
             x = *array1 - *array2;
-
+            printf("%d", x);
             if (x < 0)
             {
                 printf("%s<%s", jono1, jono2); // kokkeillaan printata vähä vastauksia
+
                 break;
             }
             else if (x > 0)
             {
                 printf("%s>%s", jono1, jono2);
+
+                break;
+            }
+            else if (x == 0)
+            {
+                printf("%s=%s", array1, array2);
                 break;
             }
 
             break;
         }
-        if (merkki == 0) // muuten ollaanki tällä liikenteessä
-        {
-            x = *array1 - *array2;
-            printf("%s=%s", jono1, jono2);
-            break;
-        }
+        // if (merkki == 0) // muuten ollaanki tällä liikenteessä
+        // {
+
+        //     printf("%s=%s", array1, array2);
+        //     break;
+        // }
     }
 }
 
-void luepois(void)
+void luePois(void)
 {
     while (getc(stdin) != '\n')
         ;
