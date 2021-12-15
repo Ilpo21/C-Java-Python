@@ -9,9 +9,9 @@
         ""
       ],
       "stopAtEntry": false,
-      "cwd": "c:/Users/g4m3f/Desktop/Lipasto/Koodia/Ohjelmointi_1/Ohjelmointi1",
+      "cwd": "h:/Lipasto/code/Ohjelmointi1",
       "environment": [],
-      "program": "c:/Users/g4m3f/Desktop/Lipasto/Koodia/Ohjelmointi_1/Ohjelmointi1/build/Debug/outDebug",
+      "program": "h:/Lipasto/code/Ohjelmointi1/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
