@@ -46,10 +46,10 @@ void omaStrcmp(char *array1, char *array2, int x)
     }
     else if (a < b)
     {
-        printf("%s<%s", array1, array2);
+        printf("%s<=%s", array1, array2);
     }
     else if (a > b)
     {
-        printf("%s>%s", array1, array2);
+        printf("%s>=%s", array1, array2);
     }
 }
