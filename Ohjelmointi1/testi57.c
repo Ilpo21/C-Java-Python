@@ -18,7 +18,7 @@ int main(void)
 
     if ((strlen(jono) - 1) == '\n')
     {
-        jono[strlen(jono)] - 1 = '\0';
+        jono = jono[strlen(jono)] - 1 = '\0';
     }
 
     omaStrcmp(jono, jono1, y);
