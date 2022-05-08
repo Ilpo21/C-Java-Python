@@ -1,4 +1,6 @@
-public class Asukkaat {
+
+
+public class Resident {
     private String name;
     private String bday;
 
@@ -20,14 +22,15 @@ public class Asukkaat {
         return this.bday;
     }
 
-    public void setBDay(String bDay) {
+    public void setBDay(String bday) {
         this.bday = bday;
     }
-    
+
 
     public void print(){
-        System.out.println("Name of resident:"+ name);
-        System.out.println("Birthdate of resident:"+ bday);
+        System.out.println("");
+        System.out.println("Name of resident: "+ name);
+        System.out.println("Birthdate of resident: "+ bday);
     }
     
 }

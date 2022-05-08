@@ -1,4 +1,4 @@
-public class Tontti {
+public class Plot {
     private String name;
     private String[] location;
     private double area;
@@ -46,11 +46,12 @@ public class Tontti {
     }
 
     public void print(){
-System.out.println("Plot name:"+name);
-System.out.println("Plot location:"+location[0]+location[1]);
-System.out.println("Plot area:+area");
-System.out.println("Building details:");
-building.print();
+    System.out.println("Plot name: "+name);
+    System.out.println("Plot location: "+location[0]+""+location[1]);
+    System.out.println("Plot area: " +area);
+    System.out.println("");
+    System.out.println("Building details: ");
+    building.print();
     
     }
 
