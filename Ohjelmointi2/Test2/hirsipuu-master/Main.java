@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // Tämän avulla saadaan tiedosto missä sijaitsee sanat.
+        // Tämän avulla saadaan tiedosto missä sijaitsee sanat. Kirjoittaa "" merkkeihin
+        // tiedoston nimen.
         String tiedosto = "List.txt";
         Sanalista sanalista = new Sanalista(tiedosto);
         ArrayList sanat = sanalista.annaSanat();
@@ -23,7 +24,7 @@ public class Main {
             }
             i++;
         }
-
+        // pelin aloitus
         System.out.println("<Hirsipuu Peli>");
         System.out.println("*******************");
 
@@ -38,16 +39,18 @@ public class Main {
             char arvaus = kysyKirjain();
             boolean onnistuiko = peli.arvaa(arvaus);
             if (onnistuiko) {
-
+                // printtaa että arvaus on oikein
                 System.out.println("Oikein!");
                 System.out.println("************************");
                 System.out.println("");
+                // korvaa viivoja kirjaimilla
                 for (int j = 0; j < arvattava.length(); j++) {
                     if (arvattava.charAt(j) == arvaus) {
                         viivat[j] = arvaus;
                     }
                 }
                 if (peli.onLoppu(viivat)) {
+                    // printtaa voittaneesi pelin ja oikean sanan
                     System.out.println("Sana oli:");
                     System.out.println(viivat);
                     System.out.println("###############");
@@ -56,6 +59,7 @@ public class Main {
                     break;
                 }
             } else {
+                // printaa arvauksen menneen värin
                 System.out.println("Väärin meni :(");
                 System.out.println("Kokeile uudelleen!");
                 System.out.println("************************");
@@ -66,6 +70,7 @@ public class Main {
             System.out.println(viivat);
             System.out.println("Arvauksia on jaljella: " + arvausLkm);
             System.out.println("Arvatut kirjaimet: " + peli.arvaukset());
+            // printtaa pelin päättyneeksi kun arvaukset loppuvat
             if (arvausLkm == 0) {
                 System.out.println("###############");
                 System.out.println("#Peli paattyi.#");
@@ -76,6 +81,7 @@ public class Main {
         scan.close();
     }
 
+    // kysyy arvattavan kirjaimen
     public static Character kysyKirjain() {
         Scanner scan = new Scanner(System.in);
 
