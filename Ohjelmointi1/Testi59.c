@@ -26,7 +26,10 @@ typedef struct
     char array[Jengi]; // jengi nimi
     int voitot;        // kenttä voitoille
     int tappiot;       // kenttä tappioille
+    int tulos;         // kentta tulokselle
 } Tiimit;
+
+int vertailu(Tiimit tulos1, Tiimit tulos2);
 
 int main(void)
 {
@@ -36,27 +39,35 @@ int main(void)
     int h = 0, j = 0;
     char jengi[Jengi];
     char jengi2[Jengi];
-    printf("Tiimi 1");
-    fgets(jengi, Jengi, stdin);
-    printf("Tiimi 1 voitot");
-    scanf("%d", &x);
-    printf("tiimi 1 tappiot");
-    scanf("%d", &y);
+    int maara = 0;
+    char pisteet[Jengi];
+    int vastaus = 0;
+    int v1 = 0, v2 = 0, v3 = 0;
 
-    strcpy(tiimi1.array, jengi);
-    tiimi1.voitot = x;
-    tiimi1.tappiot = y;
+    printf("Syota joukkueiden maara");
+    scanf("%d", &maara);
 
-    printf("Tiimi 2");
-    fgets(jengi2, Jengi, stdin);
-    printf("Tiimi 2 voitot");
-    scanf("%d", &a);
-    printf("tiimi 2 tappiot");
-    scanf("%d", &b);
+    for (int i = 0; i < maara; i++)
+    {
+        printf("Syota tiimin nimi >");
+        scanf("%s", Tiimit[i].array);
+        printf("Syota tiimin voitot >");
+        scanf("%d", &Tiimit[i].voitot);
+        printf("Syota tiimin tappiot >");
+        scanf("%d", &Tiimit[i].tappiot);
+    }
+    for (int j = 0; j < maara; j++)
+    {
+        for (int i = 0; i < maara; i++)
+        {
+            Tiimit[i].tulos = Tiimit[i].voitot - Tiimit[i].tappiot;
+        }
+    }
 
-    strcpy(tiimi2.array, jengi2);
-    tiimi2.voitot = a;
-    tiimi2.tappiot = b;
+    if (vastaus == 1)
+    {
+        
+    }
 
     h = x - y;
     j = a - b;
@@ -86,3 +97,11 @@ int main(void)
 
     return 0;
 }
+
+int vertaa(Tiimit t1, Tiimit t2)
+{
+    if (strcmp(t1.array, t2.array) == 0 && t1.tulos >= t2.tulos)
+
+        return (1);
+    else
+        return (0);
