@@ -1,0 +1,9 @@
+1.     Tehtävään käytetty työmäärä tunneissa.
+2.     Mikä tehtävässä oli helppoa ja mikä vaikeaa?
+3.     Mitä opit laatiessasi ohjelmaa?
+4.     Mahdollinen muu palaute.
+
+1. Tunteja tähän meni 6 tuntia tehdä. Tällä kertaa kokonaan itsenäisesti.
+2. Minulla oli vaikeaa ymmärtää tehtävänantoa ja miten ohjelma olisi viisainta rakentaa. Prosessi alkaa olemaan yhä helpompaa ja helpompaa kokonaisuudessa.
+3. Opin enemmän järkevästä tavasta rakentaa ohjelmia. myös array listien käyttö tuntu helpommalta
+4. Ei tällä kertaa muuta.
