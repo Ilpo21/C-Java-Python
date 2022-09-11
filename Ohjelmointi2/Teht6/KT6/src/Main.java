@@ -96,34 +96,33 @@ public class Main {
         System.out.println(" -------");
         System.out.println(" |     |");
         if (arvausLkm >= 1) {
-          System.out.println(" O");
+            System.out.println(" O");
         }
-        
+
         if (arvausLkm >= 2) {
-          System.out.print("\\ ");
-          if (arvausLkm >= 3) {
-            System.out.println("/");
-          }
-          else {
-            System.out.println("");
-          }
+            System.out.print("\\ ");
+            if (arvausLkm >= 3) {
+                System.out.println("/");
+            } else {
+                System.out.println("");
+            }
         }
-        
+
         if (arvausLkm >= 4) {
-          System.out.println(" |");
+            System.out.println(" |");
         }
-        
+
         if (arvausLkm >= 5) {
-          System.out.print("/ ");
-          if (arvausLkm >= 6) {
-            System.out.println("\\");
-          }
-          else {
-            System.out.println("");
-          }
+            System.out.print("/ ");
+            if (arvausLkm >= 6) {
+                System.out.println("\\");
+            } else {
+                System.out.println("");
+            }
         }
         System.out.println("");
         System.out.println("");
+    }
 }
 // Random rand = new Random();
 // sana = sanat.get(rand.nextInt(sanat.size()));
