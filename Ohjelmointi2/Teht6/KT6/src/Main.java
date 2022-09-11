@@ -92,36 +92,38 @@ public class Main {
         return 0;
     }
 
-    System.out.println(" -------");System.out.println(" |     |");if(arvausLkm>=1)
-
-    {
+    private static void printHangedMan(Integer arvausLkm) {
+        System.out.println(" -------");
+        System.out.println(" |     |");
+        if (arvausLkm >= 1) {
           System.out.println(" O");
         }
-
-    if(arvausLkm>=2)
-    {
-        System.out.print("\\ ");
-        if (arvausLkm >= 3) {
+        
+        if (arvausLkm >= 2) {
+          System.out.print("\\ ");
+          if (arvausLkm >= 3) {
             System.out.println("/");
-        } else {
+          }
+          else {
             System.out.println("");
+          }
         }
-    }
-
-    if(arvausLkm>=4)
-    {
-        System.out.println(" |");
-    }
-
-    if(arvausLkm>=5)
-    {
-        System.out.print("/ ");
-        if (arvausLkm >= 6) {
+        
+        if (arvausLkm >= 4) {
+          System.out.println(" |");
+        }
+        
+        if (arvausLkm >= 5) {
+          System.out.print("/ ");
+          if (arvausLkm >= 6) {
             System.out.println("\\");
-        } else {
+          }
+          else {
             System.out.println("");
+          }
         }
-    }System.out.println("");System.out.println("");
+        System.out.println("");
+        System.out.println("");
 }
 // Random rand = new Random();
 // sana = sanat.get(rand.nextInt(sanat.size()));
