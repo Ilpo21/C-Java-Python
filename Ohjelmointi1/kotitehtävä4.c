@@ -10,7 +10,7 @@ void main()
     {
         printf("ENTER YOUR SECRET PIN NUMBER:");
         scanf("%d", &pin);
-        if (pin != 1520)
+        if (pin != 1234)
             printf("PLEASE ENTER VALID PASSWORD\n");
     }
     do
